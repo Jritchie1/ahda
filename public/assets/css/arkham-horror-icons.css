@@ -1,0 +1,625 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('arkham-horror-icons/icomoon.eot?ungvxs');
+  src:  url('arkham-horror-icons/icomoon.eot?ungvxs#iefix') format('embedded-opentype'),
+    url('arkham-horror-icons/icomoon.ttf?ungvxs') format('truetype'),
+    url('arkham-horror-icons/icomoon.woff?ungvxs') format('woff'),
+    url('arkham-horror-icons/icomoon.svg?ungvxs#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-the_circle_undone:before {
+  content: "\e9ac";
+}
+.icon-disappearance_at_the_twilight_estate:before {
+  content: "\e9ad";
+}
+.icon-the_witching_hour:before {
+  content: "\e9ae";
+}
+.icon-at_deaths_doorstep:before {
+  content: "\e9af";
+}
+.icon-the_secret_name:before {
+  content: "\e9ba";
+}
+.icon-the_wages_of_sin:before {
+  content: "\e9bb";
+}
+.icon-for_the_greater_good:before {
+  content: "\e9bc";
+}
+.icon-union_and_disillusion:before {
+  content: "\e9bd";
+}
+.icon-in_the_clutches_of_chaos:before {
+  content: "\e9be";
+}
+.icon-before_the_black_throne:before {
+  content: "\e9bf";
+}
+.icon-agents_of_azathoth:before {
+  content: "\e9b0";
+}
+.icon-anettes_coven:before {
+  content: "\e9b1";
+}
+.icon-city_of_sins:before {
+  content: "\e9b2";
+}
+.icon-inexorable_fate:before {
+  content: "\e9b3";
+}
+.icon-realm_of_death:before {
+  content: "\e9b4";
+}
+.icon-silver_twilight_lodge:before {
+  content: "\e9b5";
+}
+.icon-spectral_predators:before {
+  content: "\e9b6";
+}
+.icon-the_watcher:before {
+  content: "\e9b7";
+}
+.icon-trapped_spirits:before {
+  content: "\e9b8";
+}
+.icon-witchcraft:before {
+  content: "\e9b9";
+}
+.icon-secrets_of_the_universe:before {
+  content: "\e9c0";
+}
+.icon-music_of_the_damned:before {
+  content: "\e9c1";
+}
+.icon-the_forgotten_age:before {
+  content: "\e987";
+}
+.icon-the_untamed_wilds:before {
+  content: "\e99c";
+}
+.icon-the_doom_of_eztli:before {
+  content: "\e99b";
+}
+.icon-threads_of_fate:before {
+  content: "\e99a";
+}
+.icon-the_boundary_beyond:before {
+  content: "\e98b";
+}
+.icon-pillars_of_judgement:before {
+  content: "\e98c";
+}
+.icon-knyan:before {
+  content: "\e98d";
+}
+.icon-heart_of_the_elders:before {
+  content: "\e98e";
+}
+.icon-city_of_archives:before {
+  content: "\e98f";
+}
+.icon-the_depths_of_yoth:before {
+  content: "\e990";
+}
+.icon-shattered_aeons:before {
+  content: "\e991";
+}
+.icon-turn_back_time:before {
+  content: "\e992";
+}
+.icon-yigs_venom:before {
+  content: "\e993";
+}
+.icon-agents_of_yig:before {
+  content: "\e994";
+}
+.icon-deadly_traps:before {
+  content: "\e995";
+}
+.icon-expedition:before {
+  content: "\e996";
+}
+.icon-forgotten_ruins:before {
+  content: "\e997";
+}
+.icon-guardians_of_time:before {
+  content: "\e998";
+}
+.icon-pnakotic_brotherhood:before {
+  content: "\e999";
+}
+.icon-poison:before {
+  content: "\e988";
+}
+.icon-rainforest:before {
+  content: "\e989";
+}
+.icon-serpents:before {
+  content: "\e98a";
+}
+.icon-temporal_flux:before {
+  content: "\e986";
+}
+.icon-rougerauo2:before {
+  content: "\e95a";
+  color: #5b5b5b;
+}
+.icon-the_bayou:before {
+  content: "\e95b";
+}
+.icon-curse_of_the_rougarou:before {
+  content: "\e978";
+}
+.icon-carnevale:before {
+  content: "\e979";
+}
+.icon-venice:before {
+  content: "\e97a";
+}
+.icon-lol:before {
+  content: "\e97b";
+}
+.icon-in_the_labyrinths_of_lunacy:before {
+  content: "\e97d";
+}
+.icon-epic_multiplayer:before {
+  content: "\e97e";
+}
+.icon-single_group:before {
+  content: "\e97f";
+}
+.icon-guardians:before {
+  content: "\e980";
+}
+.icon-abyssal_gifts:before {
+  content: "\e981";
+}
+.icon-abyssal_tribute:before {
+  content: "\e982";
+}
+.icon-brotherhood_of_the_beast:before {
+  content: "\e983";
+}
+.icon-sands_of_egypt:before {
+  content: "\e984";
+}
+.icon-eternal_slumber:before {
+  content: "\e985";
+}
+.icon-nights_usurper:before {
+  content: "\e959";
+}
+.icon-carcosa:before {
+  content: "\e950";
+}
+.icon-curtain_call:before {
+  content: "\e952";
+}
+.icon-the_last_king:before {
+  content: "\e953";
+}
+.icon-echoes_of_the_past:before {
+  content: "\e954";
+}
+.icon-the_unspeakable_oath:before {
+  content: "\e955";
+}
+.icon-a_phantom_of_truth:before {
+  content: "\e95c";
+}
+.icon-the_pallid_mask:before {
+  content: "\e964";
+}
+.icon-black_stars_rise:before {
+  content: "\e965";
+}
+.icon-the_flood_below:before {
+  content: "\e956";
+}
+.icon-the_vortex_above:before {
+  content: "\e957";
+}
+.icon-dim_carcosa:before {
+  content: "\e958";
+}
+.icon-byakhee:before {
+  content: "\e966";
+}
+.icon-cult_of_the_yellow_sign:before {
+  content: "\e967";
+}
+.icon-decay_and_filth:before {
+  content: "\e968";
+}
+.icon-delusions:before {
+  content: "\e969";
+}
+.icon-evil_portents:before {
+  content: "\e96a";
+}
+.icon-hasturs_gift:before {
+  content: "\e96b";
+}
+.icon-hauntings:before {
+  content: "\e96c";
+}
+.icon-inhabitants_of_carcosa:before {
+  content: "\e96d";
+}
+.icon-the_stranger:before {
+  content: "\e97c";
+}
+.icon-set:before {
+  content: "\e947";
+}
+.icon-extracurricular_activity:before {
+  content: "\e948";
+}
+.icon-the_house_always_wins:before {
+  content: "\e949";
+}
+.icon-armitages_fate:before {
+  content: "\e94a";
+}
+.icon-the_miskatonic_museum:before {
+  content: "\e94b";
+}
+.icon-the_essex_county_express:before {
+  content: "\e96e";
+}
+.icon-blood_on_the_altar:before {
+  content: "\e96f";
+}
+.icon-undimensioned_and_unseen:before {
+  content: "\e970";
+}
+.icon-where_doom_awaits:before {
+  content: "\e971";
+}
+.icon-lost_in_time_and_space:before {
+  content: "\e972";
+}
+.icon-bad_luck:before {
+  content: "\e973";
+}
+.icon-beast_thralls:before {
+  content: "\e974";
+}
+.icon-bishops_thralls:before {
+  content: "\e975";
+}
+.icon-dunwich:before {
+  content: "\e976";
+}
+.icon-hideous_abominations:before {
+  content: "\e977";
+}
+.icon-naomis_crew:before {
+  content: "\e99d";
+}
+.icon-sorcery:before {
+  content: "\e99e";
+}
+.icon-the_beyond:before {
+  content: "\e99f";
+}
+.icon-whippoorwills:before {
+  content: "\e9a0";
+}
+.icon-return_to_the_dunwich_legacy:before {
+  content: "\e93b";
+}
+.icon-return_to_extracurricular_activities:before {
+  content: "\e93c";
+}
+.icon-return_to_the_house_always_wins:before {
+  content: "\e93d";
+}
+.icon-return_to_the_miskatonic_museum:before {
+  content: "\e93e";
+}
+.icon-return_to_the_essex_county_express:before {
+  content: "\e93f";
+}
+.icon-return_to_blood_on_the_altar:before {
+  content: "\e940";
+}
+.icon-return_to_undimensioned_and_unseen:before {
+  content: "\e941";
+}
+.icon-return_to_where_doom_awaits:before {
+  content: "\e942";
+}
+.icon-return_to_lost_in_time_and_space:before {
+  content: "\e943";
+}
+.icon-resurgent_evils:before {
+  content: "\e944";
+}
+.icon-erratic_fear:before {
+  content: "\e94c";
+}
+.icon-creeping_cold:before {
+  content: "\e94d";
+}
+.icon-secret_doors:before {
+  content: "\e94e";
+}
+.icon-yog_sothoths_emissaries:before {
+  content: "\e94f";
+}
+.icon-beyond_the_threshold:before {
+  content: "\e93a";
+}
+.icon-ancient_evils:before {
+  content: "\e92c";
+}
+.icon-dark_cult:before {
+  content: "\e933";
+}
+.icon-agents_of_yog:before {
+  content: "\e934";
+}
+.icon-agents_of_cthulhu:before {
+  content: "\e935";
+}
+.icon-ghouls:before {
+  content: "\e945";
+  color: #000030;
+}
+.icon-chilling_cold:before {
+  content: "\e946";
+  color: #000030;
+}
+.icon-core:before {
+  content: "\e936";
+  color: #000030;
+}
+.icon-agents_of_hastur:before {
+  content: "\e937";
+  color: #000030;
+}
+.icon-agents_of_shub:before {
+  content: "\e938";
+  color: #000030;
+}
+.icon-locked_doors:before {
+  content: "\e95d";
+  color: #000030;
+}
+.icon-nightgaunts:before {
+  content: "\e95f";
+  color: #000030;
+}
+.icon-rats:before {
+  content: "\e960";
+  color: #000030;
+}
+.icon-striking_fear:before {
+  content: "\e961";
+  color: #000030;
+}
+.icon-the_gathering:before {
+  content: "\e963";
+  color: #000030;
+}
+.icon-midnight_masks:before {
+  content: "\e95e";
+  color: #000030;
+}
+.icon-cult_of_umordoth:before {
+  content: "\e951";
+  color: #000030;
+}
+.icon-the_devourer_below:before {
+  content: "\e962";
+  color: #000030;
+}
+.icon-rtnotz:before {
+  content: "\e939";
+}
+.icon-ghouls_of_umrdhoth:before {
+  content: "\e932";
+}
+.icon-the_devourers_cult:before {
+  content: "\e92d";
+}
+.icon-return_to_the_gathering:before {
+  content: "\e92e";
+}
+.icon-return_to_the_midnight_masks:before {
+  content: "\e92f";
+}
+.icon-return_cult:before {
+  content: "\e930";
+}
+.icon-return_to_the_devourer_below:before {
+  content: "\e931";
+}
+.icon-share:before {
+  content: "\e90a";
+}
+.icon-paintbrush:before {
+  content: "\e920";
+}
+.icon-level_0:before {
+  content: "\e910";
+}
+.icon-level_1:before {
+  content: "\e90c";
+}
+.icon-level_2:before {
+  content: "\e90d";
+}
+.icon-level_3:before {
+  content: "\e923";
+}
+.icon-level_4:before {
+  content: "\e924";
+}
+.icon-level_5:before {
+  content: "\e925";
+}
+.icon-inverted_level_0:before {
+  content: "\e926";
+}
+.icon-inverted_level_1:before {
+  content: "\e927";
+}
+.icon-inverted_level_2:before {
+  content: "\e928";
+}
+.icon-inverted_level_3:before {
+  content: "\e929";
+}
+.icon-inverted_level_4:before {
+  content: "\e92a";
+}
+.icon-inverted_level_5:before {
+  content: "\e91b";
+}
+.icon-filter:before {
+  content: "\ea5b";
+}
+.icon-faq:before {
+  content: "\e921";
+}
+.icon-deck:before {
+  content: "\e922";
+}
+.icon-cards:before {
+  content: "\e92b";
+}
+.icon-flip_card:before {
+  content: "\e91d";
+}
+.icon-book:before {
+  content: "\e91e";
+}
+.icon-guardian:before {
+  content: "\e900";
+}
+.icon-seeker:before {
+  content: "\e901";
+}
+.icon-mystic:before {
+  content: "\e902";
+}
+.icon-rogue:before {
+  content: "\e903";
+}
+.icon-survivor:before {
+  content: "\e904";
+}
+.icon-willpower:before {
+  content: "\e905";
+}
+.icon-intellect:before {
+  content: "\e906";
+}
+.icon-combat:before {
+  content: "\e907";
+}
+.icon-agility:before {
+  content: "\e9a1";
+}
+.icon-wild:before {
+  content: "\e9a2";
+}
+.icon-skill_willpower:before {
+  content: "\e9a3";
+}
+.icon-skill_intellect:before {
+  content: "\e9a4";
+}
+.icon-skill_combat:before {
+  content: "\e9a5";
+}
+.icon-skill_agility:before {
+  content: "\e9a6";
+}
+.icon-skill_wild:before {
+  content: "\e9a7";
+}
+.icon-elder_sign:before {
+  content: "\e9a8";
+}
+.icon-skull:before {
+  content: "\e9a9";
+}
+.icon-cultist:before {
+  content: "\e9aa";
+}
+.icon-tablet:before {
+  content: "\e9ab";
+}
+.icon-elder_thing:before {
+  content: "\e913";
+}
+.icon-auto_fail:before {
+  content: "\e914";
+}
+.icon-per_investigator:before {
+  content: "\e915";
+}
+.icon-weakness:before {
+  content: "\e916";
+}
+.icon-action:before {
+  content: "\e917";
+}
+.icon-reaction:before {
+  content: "\e918";
+}
+.icon-free:before {
+  content: "\e919";
+}
+.icon-bullet:before {
+  content: "\e91a";
+}
+.icon-check_circle:before {
+  content: "\e911";
+}
+.icon-arrow_back:before {
+  content: "\e912";
+}
+.icon-cancel:before {
+  content: "\e91c";
+}
+.icon-warning:before {
+  content: "\e91f";
+}
+.icon-one:before {
+  content: "\e908";
+}
+.icon-two:before {
+  content: "\e909";
+}
+.icon-three:before {
+  content: "\e90b";
+}
+.icon-four:before {
+  content: "\e90e";
+}
+.icon-five:before {
+  content: "\e90f";
+}
