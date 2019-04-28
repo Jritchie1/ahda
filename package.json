@@ -33,7 +33,7 @@
     "workbox-window": "^4.3.0"
   },
   "scripts": {
-    "start": "node index.html",
+    "start": "node index.js",
     "dev-start": "react-scripts start",
     "build-sw": "node ./src/sw-build.js",
     "clean-cra-sw": "rm -f build/precache-manifest.*.js && rm -f build/service-worker.js",
