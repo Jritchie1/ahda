@@ -8,7 +8,7 @@ if ('function' === typeof importScripts) {
     workbox.precaching.precacheAndRoute([
   {
     "url": "asset-manifest.json",
-    "revision": "5f370f4a95b16e411bbf49ce29d2cbe9"
+    "revision": "5f812b95fdb2cffa1cac418adf24b2b9"
   },
   {
     "url": "assets/css/arkham-horror-icons.css",
@@ -107,8 +107,8 @@ if ('function' === typeof importScripts) {
     "revision": "72eb63bf0c9f0a4c65e7435dc33f7657"
   },
   {
-    "url": "precache-manifest.5048a4294da789db2980acd747742d86.js",
-    "revision": "5048a4294da789db2980acd747742d86"
+    "url": "precache-manifest.2c65b6cba19ce59ff4ce0781f72cc013.js",
+    "revision": "2c65b6cba19ce59ff4ce0781f72cc013"
   },
   {
     "url": "routes.js",
@@ -116,7 +116,7 @@ if ('function' === typeof importScripts) {
   },
   {
     "url": "service-worker.js",
-    "revision": "4ff147034420809eedda4a229616446a"
+    "revision": "9c765f2ed88938fe6a0f79ed974ad68e"
   },
   {
     "url": "static/css/2.f3d3e0bb.chunk.css",
@@ -184,8 +184,4 @@ if ('function' === typeof importScripts) {
 
 self.addEventListener('install', (event) => {
   self.skipWaiting();
-});
-
-self.addEventListener('activate', (event) => {
-  event.waitUntil(clients.claim());
 });
