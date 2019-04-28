@@ -1,1 +1,1 @@
-web: npm index.html
+web: node ./index.html
