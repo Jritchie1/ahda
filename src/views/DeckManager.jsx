@@ -77,7 +77,6 @@ class DeckManager extends React.Component {
   async componentDidMount() {
     mapInvestigatorInfo(this.deck.investigatorCode);
     mapDecklist(this.deck.deckList);
-    this.setState(this.state);
     if ('indexedDB' in window) {
       userCampaigns = await(await db).getAll('campaignData');
       //eslint-disable-next-line
@@ -87,6 +86,7 @@ class DeckManager extends React.Component {
       });
       this.setGlobal({activeCampaign: activeCampaign,
                        campaigns: userCampaigns});
+      this.setState(this.state);
     }
   }
 
