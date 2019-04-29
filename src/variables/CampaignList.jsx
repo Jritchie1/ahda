@@ -654,7 +654,6 @@ const Campaigns = [
               }
             ]
           },
-
           {
             "id": 3,
             "title": "resolution 3",

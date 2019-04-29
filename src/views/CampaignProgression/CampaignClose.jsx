@@ -60,13 +60,13 @@ class ScenarioViewer extends React.Component{
     const { classes } = this.props;
       return (
           <GridItem xs={8} sm={8} md={8}>
-            <Card className={classes.textCenter} style={{maxHeight: "85vh"}}>
+            <Card className={classes.textCenter}>
               <CardHeader color={this.global.color}>
                 <h3 className={classes.cardTitleWhite}>
                 <span title={campaignData.code} style={{fontSize: "30px", margin: "auto"}} className={campaignData.icon}></span> {campaignData.name} <span title={campaignData.code} style={{fontSize: "30px", margin: "auto"}} className={campaignData.icon}></span>
                 </h3>
               </CardHeader>
-              <CardBody style={{maxHeight: "85vh"}}>
+              <CardBody style={{maxHeight: "85vh"}} scroll>
                 <GridContainer>
                   <GridItem xs={9} sm={9} md={9}>
                     <h3><strong>Final Campaign Log</strong></h3>

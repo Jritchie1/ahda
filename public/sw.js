@@ -8,7 +8,7 @@ if ('function' === typeof importScripts) {
     workbox.precaching.precacheAndRoute([
   {
     "url": "asset-manifest.json",
-    "revision": "e08d46d9ac6a766a67505e677601e1d6"
+    "revision": "6c4394116668b7839d3cca8fee66f5da"
   },
   {
     "url": "assets/css/arkham-horror-icons.css",
@@ -96,7 +96,7 @@ if ('function' === typeof importScripts) {
   },
   {
     "url": "index.html",
-    "revision": "60809bcaca6b60269c845c72844c53e2"
+    "revision": "931dd80663a50b5c2e9f8add5dc4b93a"
   },
   {
     "url": "index.js",
@@ -107,8 +107,8 @@ if ('function' === typeof importScripts) {
     "revision": "72eb63bf0c9f0a4c65e7435dc33f7657"
   },
   {
-    "url": "precache-manifest.0329e46911146b6f8bde976f0659dd85.js",
-    "revision": "0329e46911146b6f8bde976f0659dd85"
+    "url": "precache-manifest.3d83061055e508b0dc00837c5b79a19b.js",
+    "revision": "3d83061055e508b0dc00837c5b79a19b"
   },
   {
     "url": "routes.js",
@@ -116,7 +116,7 @@ if ('function' === typeof importScripts) {
   },
   {
     "url": "service-worker.js",
-    "revision": "75f15ae64d76633106d053fa7aa6b308"
+    "revision": "451f0a0f6913df9a8b9a74b6519e67bb"
   },
   {
     "url": "static/css/2.f3d3e0bb.chunk.css",
@@ -131,8 +131,8 @@ if ('function' === typeof importScripts) {
     "revision": "e6f110158c70ee52c48ecd9c4fc2c818"
   },
   {
-    "url": "static/js/main.9566215e.chunk.js",
-    "revision": "efd73b5e102f20a250fa82f868c61615"
+    "url": "static/js/main.751d237e.chunk.js",
+    "revision": "6a34eecd33d7d122e5cf4ebe630bb909"
   },
   {
     "url": "static/js/runtime~main.a8a9905a.js",
