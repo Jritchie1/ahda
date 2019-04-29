@@ -46,6 +46,6 @@
   "start_url": "/?utm_source=homescreen",
   "display": "standalone",
   "orientation": "landscape",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "purple",
+  "background_color": "lavender"
 }

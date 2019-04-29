@@ -8,7 +8,7 @@ if ('function' === typeof importScripts) {
     workbox.precaching.precacheAndRoute([
   {
     "url": "asset-manifest.json",
-    "revision": "6c4394116668b7839d3cca8fee66f5da"
+    "revision": "d72f6d649bbd92558b55fd50a5748ea4"
   },
   {
     "url": "assets/css/arkham-horror-icons.css",
@@ -104,11 +104,11 @@ if ('function' === typeof importScripts) {
   },
   {
     "url": "manifest.json",
-    "revision": "72eb63bf0c9f0a4c65e7435dc33f7657"
+    "revision": "f4721bcf4db7f5b08e30cbc9d8c81969"
   },
   {
-    "url": "precache-manifest.3d83061055e508b0dc00837c5b79a19b.js",
-    "revision": "3d83061055e508b0dc00837c5b79a19b"
+    "url": "precache-manifest.d9e54c1c3cf2c885c3214fe442691ff4.js",
+    "revision": "d9e54c1c3cf2c885c3214fe442691ff4"
   },
   {
     "url": "routes.js",
@@ -116,7 +116,7 @@ if ('function' === typeof importScripts) {
   },
   {
     "url": "service-worker.js",
-    "revision": "451f0a0f6913df9a8b9a74b6519e67bb"
+    "revision": "73b50f99d07b10edb1d02ed5675a051f"
   },
   {
     "url": "static/css/2.f3d3e0bb.chunk.css",
