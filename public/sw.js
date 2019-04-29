@@ -1,14 +1,31 @@
-if ('function' === typeof importScripts) {
-  importScripts(
-    'https://storage.googleapis.com/workbox-cdn/releases/3.5.0/workbox-sw.js'
-  )
+/**
+ * Welcome to your Workbox-powered service worker!
+ *
+ * You'll need to register this file in your web app and you should
+ * disable HTTP caching for this file too.
+ * See https://goo.gl/nhQhGp
+ *
+ * The rest of the code is auto-generated. Please don't update this file
+ * directly; instead, make changes to your Workbox build configuration
+ * and re-run your build process.
+ * See https://goo.gl/2aRDsh
+ */
 
-  if (workbox) {
-    console.log('Workbox is loaded');
-    workbox.precaching.precacheAndRoute([
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.0/workbox-sw.js");
+
+workbox.core.skipWaiting();
+
+workbox.core.clientsClaim();
+
+/**
+ * The workboxSW.precacheAndRoute() method efficiently caches and responds to
+ * requests for URLs in the manifest.
+ * See https://goo.gl/S9QRab
+ */
+self.__precacheManifest = [
   {
     "url": "asset-manifest.json",
-    "revision": "d72f6d649bbd92558b55fd50a5748ea4"
+    "revision": "3b42f0d18f3213475175102646a58c87"
   },
   {
     "url": "assets/css/arkham-horror-icons.css",
@@ -96,7 +113,7 @@ if ('function' === typeof importScripts) {
   },
   {
     "url": "index.html",
-    "revision": "931dd80663a50b5c2e9f8add5dc4b93a"
+    "revision": "56f290513700452f5aa8f59bf0293b5c"
   },
   {
     "url": "index.js",
@@ -107,16 +124,8 @@ if ('function' === typeof importScripts) {
     "revision": "f4721bcf4db7f5b08e30cbc9d8c81969"
   },
   {
-    "url": "precache-manifest.d9e54c1c3cf2c885c3214fe442691ff4.js",
-    "revision": "d9e54c1c3cf2c885c3214fe442691ff4"
-  },
-  {
     "url": "routes.js",
     "revision": "3f23cf3af9928b12c26a2bbd10caabb1"
-  },
-  {
-    "url": "service-worker.js",
-    "revision": "73b50f99d07b10edb1d02ed5675a051f"
   },
   {
     "url": "static/css/2.f3d3e0bb.chunk.css",
@@ -127,12 +136,12 @@ if ('function' === typeof importScripts) {
     "revision": "59a33d43d2cb5590252d4a1913a68e93"
   },
   {
-    "url": "static/js/2.3a07d293.chunk.js",
-    "revision": "e6f110158c70ee52c48ecd9c4fc2c818"
+    "url": "static/js/2.dfd8cb0a.chunk.js",
+    "revision": "e5a353f9e67eeedea68a0270c1d723d8"
   },
   {
-    "url": "static/js/main.751d237e.chunk.js",
-    "revision": "6a34eecd33d7d122e5cf4ebe630bb909"
+    "url": "static/js/main.ffc60a88.chunk.js",
+    "revision": "32c35427bda42b46bb10d73144efed8e"
   },
   {
     "url": "static/js/runtime~main.a8a9905a.js",
@@ -174,14 +183,7 @@ if ('function' === typeof importScripts) {
     "url": "static/media/sidebar-4.08f2289e.webp",
     "revision": "08f2289e0979646b470a66418311fdda"
   }
-]);
-  }
+].concat(self.__precacheManifest || []);
+workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-  else {
-    console.log('Workbox could not be loaded. No Offline support');
-  }
-}
-
-self.addEventListener('install', (event) => {
-  self.skipWaiting();
-});
+workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/index.html"));

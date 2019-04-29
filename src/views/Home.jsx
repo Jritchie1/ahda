@@ -164,6 +164,12 @@ class Home extends React.Component {
               </CardHeader>
               <CardBody scroll>
                 <h2 className={classes.cardCategory}>Campaigns</h2>
+                  {this.global.campaigns[0] === undefined &&
+                    <GridContainer>
+                      <GridItem xs={9} sm={9} md={9}>
+                        <div style={{margin: "5px"}}>You are not currently participating in any campaigns!</div>
+                      </GridItem>
+                    </GridContainer>}
                   {this.global.campaigns.map((campaign, index) => (
                     <GridContainer key={index}>
                       <GridItem xs={9} sm={9} md={9}>
@@ -181,24 +187,6 @@ class Home extends React.Component {
                   ))}
                 <h2 className={classes.cardCategory}>Decks</h2>
                 <p className={classes.description}>
-                Turboroamer | Ursula Downs | 24XP | Active<br></br>
-                The Forgotten Age | The Curse of the Rougarou<br></br>
-                <br></br>
-                Turboroamer | Ursula Downs | 24XP | Active<br></br>
-                The Forgotten Age | The Curse of the Rougarou<br></br>
-                <br></br>
-                Turboroamer | Ursula Downs | 24XP | Active<br></br>
-                The Forgotten Age | The Curse of the Rougarou<br></br>
-                <br></br>
-                Turboroamer | Ursula Downs | 24XP | Active<br></br>
-                The Forgotten Age | The Curse of the Rougarou<br></br>
-                <br></br>
-                Turboroamer | Ursula Downs | 24XP | Active<br></br>
-                The Forgotten Age | The Curse of the Rougarou<br></br>
-                <br></br>
-                Turboroamer | Ursula Downs | 24XP | Active<br></br>
-                The Forgotten Age | The Curse of the Rougarou<br></br>
-                <br></br>
                 Coming Soon!
                 </p>
               </CardBody>

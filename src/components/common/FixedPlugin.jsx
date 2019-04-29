@@ -26,7 +26,8 @@ class FixedPlugin extends Component {
       loginBtnColor: this.props.loginBtnColor,
       loginWindowOpen: false,
       logoutWindowOpen: false,
-      registerWindowOpen: false
+      registerWindowOpen: false,
+      copyrightWindowOpen: false
     };
 
     if (!this.state.loggedIn)
@@ -69,6 +70,14 @@ class FixedPlugin extends Component {
 
   closeRegisterWindow() {
     this.setState({ registerWindowOpen: false });
+  }
+
+  showCopyrightWindow() {
+    this.setState({ copyrightWindowOpen: true });
+  }
+
+  closeCopyrightWindow() {
+    this.setState({ copyrightWindowOpen: false });
   }
 
   login() {
@@ -301,7 +310,6 @@ class FixedPlugin extends Component {
             {this.state.loggedIn === false &&
             <li className="button-container">
               <div className="button-container">
-
                   <Button
                     color="info"
                     fullWidth
@@ -371,19 +379,6 @@ class FixedPlugin extends Component {
                   </Dialog>
                 </div>
               </li>}
-            <li className="button-container">
-              <div className="button-container">
-                <Button
-                  color="warning"
-                  href="https://arkhamdb.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                  fullWidth
-                >
-                  Visit ArkhamDB
-                </Button>
-              </div>
-            </li>
 
             <li className="button-container">
               <Button
@@ -396,7 +391,35 @@ class FixedPlugin extends Component {
                 Visit Fantasy Flight Games
               </Button>
             </li>
-            <li className="adjustments-line" />
+            <li className="button-container">
+              <div className="button-container">
+                  <Button
+                    color="danger"
+                    fullWidth
+                    onClick={() => this.showCopyrightWindow()}
+                  >
+                    Copyright Notice
+                  </Button>
+                  <Dialog
+                  open={this.state.copyrightWindowOpen}
+                  onClose={() => this.closeCopyrightWindow()}
+                  aria-labelledby="alert-dialog-title"
+                  aria-describedby="alert-dialog-description"
+                  >
+                  <DialogTitle id="alert-dialog-title">{"Copyright Notice"}</DialogTitle>
+                  <DialogContent>
+                    <DialogContentText id="alert-dialog-description">
+                      The information presented on this site about Arkham Horror: The Card Game, both literal and graphical, is copyrighted by Fantasy Flight Games. This website is not produced, endorsed, supported, or affiliated with Fantasy Flight Games.
+                    </DialogContentText>
+                  </DialogContent>
+                  <DialogActions>
+                    <Button onClick={() => this.closeCopyrightWindow()} color="danger">
+                      Close Window
+                    </Button>
+                  </DialogActions>
+                  </Dialog>
+                </div>
+              </li>
           </ul>
         </div>
       </div>
