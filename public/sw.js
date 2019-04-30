@@ -25,7 +25,7 @@ workbox.core.clientsClaim();
 self.__precacheManifest = [
   {
     "url": "asset-manifest.json",
-    "revision": "ab2ffd4d6779ef88faea776b646afc27"
+    "revision": "c5b51a4ea23b01330a532e7a80197aa2"
   },
   {
     "url": "assets/css/arkham-horror-icons.css",
