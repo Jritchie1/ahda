@@ -25,7 +25,7 @@ workbox.core.clientsClaim();
 self.__precacheManifest = [
   {
     "url": "asset-manifest.json",
-    "revision": "c5b51a4ea23b01330a532e7a80197aa2"
+    "revision": "d8003c2d6f616e0b88f601eb76b8dded"
   },
   {
     "url": "assets/css/arkham-horror-icons.css",
@@ -113,7 +113,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "56f290513700452f5aa8f59bf0293b5c"
+    "revision": "6e196c6f002f3538fd4b2115f1d957b8"
   },
   {
     "url": "index.js",
@@ -136,12 +136,12 @@ self.__precacheManifest = [
     "revision": "59a33d43d2cb5590252d4a1913a68e93"
   },
   {
-    "url": "static/js/2.dfd8cb0a.chunk.js",
-    "revision": "e5a353f9e67eeedea68a0270c1d723d8"
+    "url": "static/js/2.b995188d.chunk.js",
+    "revision": "dc61cb43d270cfa4969550d97fdf0183"
   },
   {
-    "url": "static/js/main.ffc60a88.chunk.js",
-    "revision": "32c35427bda42b46bb10d73144efed8e"
+    "url": "static/js/main.8640c381.chunk.js",
+    "revision": "2c92a7791c252478b6a3d6b69111e96e"
   },
   {
     "url": "static/js/runtime~main.a8a9905a.js",

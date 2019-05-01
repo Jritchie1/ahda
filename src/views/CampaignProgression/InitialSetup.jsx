@@ -150,34 +150,15 @@ render() {
                   <div style={{width: "100vw"}}><h4><br></br>
                     <GridItem xs={12} sm={12} md={12}>You have chosen to start a {currentCampaign.number_of_players} investigator campaign.
                   <br></br><br></br></GridItem></h4></div>}
-                <GridItem xs={6} sm={3} md={3}>
-                  <Button
-                  color="success"
-                  fullWidth
-                  onClick={() => this.setDifficulty(0)}>Easy
-                  </Button>
-                </GridItem>
-                <GridItem xs={6} sm={3} md={3}>
-                <Button
-                color="info"
-                fullWidth
-                onClick={() => this.setDifficulty(1)}>Normal
-                </Button>
-                </GridItem>
-                <GridItem xs={6} sm={3} md={3}>
-                  <Button
-                  color="warning"
-                  fullWidth
-                  onClick={() => this.setDifficulty(2)}>Hard
-                  </Button>
-                </GridItem>
-                <GridItem xs={6} sm={3} md={3}>
-                  <Button
-                  color="danger"
-                  fullWidth
-                  onClick={() => this.setDifficulty(3)}>Expert
-                  </Button>
-                </GridItem>
+                {campaignData.setup.chaos_bag_setup.map((bag, index) => (
+                  <GridItem xs={6} sm={3} md={3}>
+                    <Button
+                    color={bag.difficulty_color}
+                    fullWidth
+                    onClick={() => this.setDifficulty(index)}>{bag.difficulty}
+                    </Button>
+                  </GridItem>
+                ))}
                 {currentCampaign.difficulty === undefined &&
                 <div style={{width: "100vw"}}><h4><br></br>
                   <GridItem xs={12} sm={12} md={12}>Please choose a difficulty!

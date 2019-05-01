@@ -52,6 +52,8 @@ render() {
                       <span title={path.section_key} style={{fontSize: "18px", margin: "auto"}} className={Campaigns[currentCampaign.campaignRef].icon}></span>}
                     {path.section_type === "finish" &&
                       <span title={path.section_key} style={{fontSize: "18px", margin: "auto"}} className="icon-faq"></span>}
+                    {path.section_type === "interlude" &&
+                      <span title={path.section_key}>{path.section_key}</span>}
                     {path.section_type === "scenario" &&
                       <span title={path.section_key}>{path.section_key}</span>}
                   </Button>

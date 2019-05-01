@@ -11,6 +11,7 @@ import InitialSetup from "./CampaignProgression/InitialSetup.jsx";
 import CampaignProgressBar from "./CampaignProgression/CampaignProgressBar.jsx";
 import ScenarioViewer from "./CampaignProgression/ScenarioViewer.jsx";
 import ResolutionViewer from "./CampaignProgression/ResolutionViewer.jsx";
+import InterludeViewer from "./CampaignProgression/InterludeViewer.jsx";
 import CampaignClose from "./CampaignProgression/CampaignClose.jsx";
 import { openDB } from 'idb';
 
@@ -86,12 +87,14 @@ class CurrentCampaign extends React.Component{
             <ScenarioViewer key="scenario-viewer"></ScenarioViewer>}
           {currentCampaign.campaign_path[currentCampaign.current_section].section_type === "scenario" && currentCampaign.current_state === "resolution" &&
             <ResolutionViewer key="scenario-resolution"></ResolutionViewer>}
+          {currentCampaign.campaign_path[currentCampaign.current_section].section_type === "interlude" &&
+            <InterludeViewer key="interlude-viewer"></InterludeViewer>}
           {currentCampaign.campaign_path[currentCampaign.current_section].section_type === "finish" &&
           <CampaignClose key="initial-finish"></CampaignClose>}
         </GridContainer>
       );
     }
-    
+
     else {
       return (
         <GridContainer>

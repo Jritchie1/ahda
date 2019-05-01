@@ -58,13 +58,13 @@ let updatedVariables;
 let logs = [];
 let pushedVariables = [];
 
-class ScenarioViewer extends React.Component{
+class InterludeViewer extends React.Component{
   constructor(props){
     super(props);
     this.state = {
       campaignLogOpen: false,
       chaosBagOpen: false,
-      resolved: false,
+      decided: false,
       checked: [],
       data: [],
       selectedValue: null,
@@ -72,9 +72,9 @@ class ScenarioViewer extends React.Component{
     }
   }
 
-  showResolution() {
+  showDecision() {
     let currentCampaign = this.global.activeCampaign;
-    this.setState({ resolved: true });
+    this.setState({ decided: true });
     pushedVariables = this.state.data;
     // eslint-disable-next-line
     pushedVariables.map(object => {
@@ -101,13 +101,13 @@ class ScenarioViewer extends React.Component{
     updatedVariables = variables;
   }
 
-  addLogs(resolution) {
-    logs.push({"text": resolution.text});
+  addLogs(decision) {
+    logs.push({"text": decision.text});
   }
 
-  addVariableToLogs(resolution, variable) {
+  addVariableToLogs(decision, variable) {
     if (variable !== null)
-      logs.push({"text": resolution.text + variable});
+      logs.push({"text": decision.text + variable});
   }
 
   handleRadioChange = (id) => {
@@ -150,16 +150,13 @@ class ScenarioViewer extends React.Component{
     this.setGlobal({activeCampaign: updatedVariables});
     currentCampaign.campaign_path[currentCampaign.current_section].section_color = "success";
     currentCampaign.current_section = currentCampaign.current_section + 1;
-    if (campaignData.scenarios.length > currentCampaign.current_scenario + 1) {
-      if (currentCampaign.swap === true && currentCampaign.campaign_path[currentCampaign.current_section].swap_to)
-        currentCampaign.current_scenario = currentCampaign.campaign_path[currentCampaign.current_section].swap_to;
-      else
-        currentCampaign.current_scenario = currentCampaign.current_scenario + 1;
-    }
-    currentCampaign.current_state = "setup";
-    this.setState({ resolved: false });
+    if (currentCampaign.swap === true && currentCampaign.campaign_path[currentCampaign.current_section].swap_to)
+      currentCampaign.current_scenario = currentCampaign.campaign_path[currentCampaign.current_section].swap_to;
+    if (campaignData.interludes.length > currentCampaign.current_interlude + 1)
+      currentCampaign.current_interlude = currentCampaign.current_interlude + 1;
+    this.setState({ decided: false });
     logs.unshift({
-      "text": "You reached " + campaignData.scenarios[currentCampaign.current_scenario].resolution[this.state.radio].title
+      "text": "You chose " + campaignData.interludes[currentCampaign.current_interlude].decisions[this.state.radio].title
     });
     logs.map(logEntry => (
       currentCampaign.campaign_log.push(logEntry)
@@ -205,8 +202,9 @@ class ScenarioViewer extends React.Component{
     let currentCampaign = this.global.activeCampaign;
     const campaignData = Campaigns[currentCampaign.campaignRef];
     const { classes } = this.props;
+    console.log(this.global.activeCampaign);
     logs = [];
-    if (this.state.resolved === false)
+    if (this.state.decided === false)
     {
       return (
         <GridItem xs={8} sm={8} md={8}>
@@ -279,36 +277,42 @@ class ScenarioViewer extends React.Component{
                   </Dialog>
                   </GridItem>
                   <GridItem xs={12} sm={12} md={12}>
-                    <h3><strong>{campaignData.scenarios[currentCampaign.current_scenario].title}</strong></h3>
+                    <h3><strong>{campaignData.interludes[currentCampaign.current_interlude].title}</strong></h3>
                   </GridItem>
                   <div>
                   <GridContainer>
+                    <GridItem xs={9} sm={9} md={9}>
+                      {campaignData.interludes[currentCampaign.current_interlude].introductions.map((intro, index) => (
+                        <div key={index}><h4><em>{intro.text}</em></h4></div>
+                      ))}
+                      <hr></hr>
+                    </GridItem>
                     <GridItem xs={11} sm={10} md={9}>
-                      {campaignData.scenarios[currentCampaign.current_scenario].resolution_checks.map((resolution_checks, index) => (
+                      {campaignData.interludes[currentCampaign.current_interlude].decision_checks.map((decision_checks, index) => (
                         <div key={index}>
-                        {resolution_checks.type === Boolean &&
-                        <div><strong>{resolution_checks.text}</strong>
+                        {decision_checks.type === Boolean &&
+                        <div><strong>{decision_checks.text}</strong>
                         <br></br>
                         <Checkbox
                           tabIndex={-1}
-                          onClick={() => this.handleToggle(resolution_checks.text, resolution_checks.id)}
+                          onClick={() => this.handleToggle(decision_checks.text, decision_checks.id)}
                           classes={{
                               checked: classes.checked,
                           }}
                         /></div>}
-                        {resolution_checks.type === Number &&
-                          <div><strong>{resolution_checks.text}</strong>
+                        {decision_checks.type === Number &&
+                          <div><strong>{decision_checks.text}</strong>
                           <div><Input
                             id="regular"
-                            name={resolution_checks.id}
+                            name={decision_checks.id}
                             onChange={this.handleChange.bind(this)}
                             inputProps={{
                               type: "Number"
                             }}
                           /></div>
                         </div>}
-                        {resolution_checks.type === String &&
-                          <div><strong>{resolution_checks.text}</strong>
+                        {decision_checks.type === String &&
+                          <div><strong>{decision_checks.text}</strong>
                           <Input
                             id="regular"
                             inputProps={{
@@ -316,16 +320,16 @@ class ScenarioViewer extends React.Component{
                             }}
                           />
                         </div>}
-                        {resolution_checks.type === Array &&
-                          <div><span><strong>{resolution_checks.text}</strong></span>
+                        {decision_checks.type === Array &&
+                          <div><span><strong>{decision_checks.text}</strong></span>
                           <br></br><br></br>
                           <GridContainer>
-                          {resolution_checks.data.map((array, index) => (
+                          {decision_checks.data.map((array, index) => (
                             <GridItem xs={4} sm={4} md={4} key={index}>{array.text}
                             <br></br>
                             <Checkbox
                               tabIndex={-1}
-                              onClick={() => this.handleToggle(array.text, resolution_checks.id)}
+                              onClick={() => this.handleToggle(array.text, decision_checks.id)}
                               classes={{
                                   checked: classes.checked,
                               }}
@@ -337,17 +341,17 @@ class ScenarioViewer extends React.Component{
                         </div>
                       ))}
                       <div>
-                      {campaignData.scenarios[currentCampaign.current_scenario].resolution.map((resolution, index) => (
+                      {campaignData.interludes[currentCampaign.current_interlude].decisions.map((decision, index) => (
                         <GridContainer key={index}>
                           <GridItem xs={10} sm={10} md={10}>
-                            <strong>{resolution.header}</strong>
+                            <strong>{decision.header}</strong>
                           </GridItem>
                           <GridItem xs={2} sm={2} md={2}>
                             <Radio
-                              checked={this.state.radio === resolution.id}
-                              onChange={this.handleRadioChange.bind(this, resolution.id)}
-                              value={resolution.id}
-                              aria-label={resolution.id}
+                              checked={this.state.radio === decision.id}
+                              onChange={this.handleRadioChange.bind(this, decision.id)}
+                              value={decision.id}
+                              aria-label={decision.id}
                               icon={<RadioButtonUncheckedIcon fontSize="small" />}
                               checkedIcon={<RadioButtonCheckedIcon fontSize="small" />}
                               />
@@ -362,7 +366,7 @@ class ScenarioViewer extends React.Component{
                       <Button
                       color={this.global.color}
                       fullWidth
-                      onClick={() => this.showResolution()}>Show Resolution</Button>
+                      onClick={() => this.showDecision()}>Show Decision</Button>
                     </GridItem>
                   </GridContainer>
                   </div>
@@ -412,7 +416,7 @@ class ScenarioViewer extends React.Component{
                   </Dialog>
                   </GridItem>
                   <GridItem xs={6} sm={6} md={6}>
-                    <h3><strong>{campaignData.scenarios[currentCampaign.current_scenario].title}</strong></h3>
+                    <h3><strong>{campaignData.interludes[currentCampaign.current_interlude].title}</strong></h3>
                   </GridItem>
                   <GridItem xs={3} sm={3} md={3}>
                     <Button
@@ -449,62 +453,50 @@ class ScenarioViewer extends React.Component{
                   <div>
                   <GridContainer>
                     <GridItem xs={9} sm={9} md={9}>
-                        <div><h4><em>{campaignData.scenarios[currentCampaign.current_scenario].resolution[this.state.radio].description}</em></h4></div>
+                        <div><h4><em>{campaignData.interludes[currentCampaign.current_interlude].decisions[this.state.radio].description}</em></h4></div>
                       <hr></hr>
                     </GridItem>
                     <GridItem xs={9} sm={9} md={9}>
-                      {campaignData.scenarios[currentCampaign.current_scenario].resolution[this.state.radio].steps.map((resolution, index) => (
+                      {campaignData.interludes[currentCampaign.current_interlude].decisions[this.state.radio].steps.map((decision, index) => (
                         <div key={index}>
-                        {resolution.varLinked !== true && resolution.varCheck !== true &&
-                          <div><h4><div>{resolution.text}
-                          {resolution.icons === true &&
+                        {decision.varLinked !== true && decision.varCheck !== true &&
+                          <div><h4><div>{decision.text}
+                          {decision.icons === true &&
                           <div><br></br></div>}
-                          {resolution.icons === true &&
-                          resolution.icon_list.map((icons, index) => (
-                            <span title={resolution.name} style={{fontSize: "30px", margin: "auto"}} className={resolution.icon} key={index}></span>
+                          {decision.icons === true &&
+                          decision.icon_list.map((icons, index) => (
+                            <span title={decision.name} style={{fontSize: "30px", margin: "auto"}} className={decision.icon} key={index}></span>
                           ))}
-                          {resolution.addToLog === true &&
-                          this.addLogs(resolution)}
-                          {resolution.check === true &&
-                          <div>{this.updateVariables( resolution.check_function(currentCampaign))}
+                          {decision.addToLog === true &&
+                          this.addLogs(decision)}
+                          {decision.check === true &&
+                          <div>{this.updateVariables( decision.check_function(currentCampaign))}
                           </div>}</div></h4></div>}
-                          {resolution.addToBag === true &&
-                          // eslint-disable-next-line
-                          resolution.tokensToAdd.map(token => {
-                            currentCampaign.chaos_bag.push(token);
-                            resolution.tokensToAdd.shift();
-                            if (resolution.tokensToAdd.length === 0)
-                              resolution.addToBag = false;
-                          })}
-                          {resolution.icons === true &&
-                          resolution.icon_list.map((icons, index) => (
-                            <span title={icons.name} style={{fontSize: "30px", margin: "auto"}} className={icons.icon} key={index}></span>
-                          ))}
-                        {resolution.varLinked === true &&
-                          <div><h4><div>{resolution.var_function(this.state, resolution.id)}
-                          {resolution.icons === true &&
+                        {decision.varLinked === true &&
+                          <div><h4><div>{decision.var_function(this.state, decision.id)}
+                          {decision.icons === true &&
                           <div><br></br></div>}
-                          {resolution.icons === true &&
-                          resolution.icon_list.map((icons, index) => (
-                            <span title={resolution.name} style={{fontSize: "30px", margin: "auto"}} className={resolution.icon} key={index}></span>
+                          {decision.icons === true &&
+                          decision.icon_list.map((icons, index) => (
+                            <span title={decision.name} style={{fontSize: "30px", margin: "auto"}} className={decision.icon} key={index}></span>
                           ))}
-                          {resolution.addToLog === true &&
-                          this.addLogs(resolution)}
-                          {resolution.check === true &&
-                          <div>{this.updateVariables( resolution.check_function(currentCampaign))}
+                          {decision.addToLog === true &&
+                          this.addLogs(decision)}
+                          {decision.check === true &&
+                          <div>{this.updateVariables( decision.check_function(currentCampaign))}
                           </div>}</div></h4></div>}
-                        {resolution.varCheck === true &&
-                          <div><h4><div><strong>{resolution.text}</strong>{resolution.var_check_function(currentCampaign, resolution.id)}
-                          {resolution.icons === true &&
+                        {decision.varCheck === true &&
+                          <div><h4><div><strong>{decision.text}</strong>{decision.var_check_function(currentCampaign, decision.id)}
+                          {decision.icons === true &&
                           <div><br></br></div>}
-                          {resolution.icons === true &&
-                          resolution.icon_list.map((icons, index) => (
-                            <span title={resolution.name} style={{fontSize: "30px", margin: "auto"}} className={resolution.icon} key={index}></span>
+                          {decision.icons === true &&
+                          decision.icon_list.map((icons, index) => (
+                            <span title={decision.name} style={{fontSize: "30px", margin: "auto"}} className={decision.icon} key={index}></span>
                           ))}
-                          {resolution.addToLog === true &&
-                          this.addVariableToLogs(resolution, resolution.var_check_function(currentCampaign, resolution.id))}
-                          {resolution.check === true &&
-                          <div>{this.updateVariables(resolution.check_function(currentCampaign))}
+                          {decision.addToLog === true &&
+                          this.addVariableToLogs(decision, decision.var_check_function(currentCampaign, decision.id))}
+                          {decision.check === true &&
+                          <div>{this.updateVariables(decision.check_function(currentCampaign))}
                           </div>}</div></h4></div>}
                         </div>
                       ))}
@@ -528,4 +520,4 @@ class ScenarioViewer extends React.Component{
     }
   }
 
-export default withStyles(styles)(ScenarioViewer);
+export default withStyles(styles)(InterludeViewer);
